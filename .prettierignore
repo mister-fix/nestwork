@@ -1,0 +1,45 @@
+# Ignore dependencies and build output
+node_modules/
+.next/
+out/
+build/
+.cache/
+
+# Ignore coverage and test output
+coverage/
+.nyc_output/
+*.lcov
+
+# Ignore logs and runtime files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Ignore environment files
+.env
+.env.*
+!.env.example
+
+# Ignore editor and system files
+.DS_Store
+.vscode/
+.vscode/*
+*.tsbuildinfo
+
+# Ignore lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore Prisma generated files (if used)
+generated/
+
+# Ignore plop templates (if used)
+plop-templates/
+
+# Ignore Prettier config itself
+.prettierrc

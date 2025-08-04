@@ -1,0 +1,75 @@
+{
+	"name": "nestwork",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Nestwork is a modern task management platform built for high-performance teams.",
+	"author": {
+		"name": "Stephen M.",
+		"url": "https://stephenwm.com/"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/mister-fix/nestwork#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mister-fix/nestwork.git"
+	},
+	"bugs": {
+		"url": "https://github.com/muister-fix/nestwork/issues"
+	},
+	"keywords": [
+		"project management",
+		"task management",
+		"productivity",
+		"kanban",
+		"sprints",
+		"team collaboration",
+		"Nestwork",
+		"workflow",
+		"next.js app",
+		"saas",
+		"turborepo"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"check-types": "turbo run check-types",
+		"cspell": "cspell ** --dot",
+		"prepare": "husky || true",
+		"plop": "plop",
+		"docs": "open-cli https://github.com/mister-fix/nestwork/blob/main/README.md"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.8.1",
+		"@commitlint/config-conventional": "19.8.1",
+		"@commitlint/format": "19.8.1",
+		"@cspell/dict-filetypes": "3.0.13",
+		"@cspell/dict-git": "3.0.7",
+		"@cspell/dict-typescript": "3.2.3",
+		"cspell": "9.2.0",
+		"cspell-dictionary": "9.2.0",
+		"husky": "9.1.7",
+		"lint-staged": "16.1.4",
+		"open-cli": "8.0.0",
+		"plop": "4.0.1",
+		"prettier": "3.6.2",
+		"prettier-plugin-brace-style": "0.8.1",
+		"prettier-plugin-merge": "0.8.0",
+		"prettier-plugin-organize-imports": "4.2.0",
+		"prettier-plugin-tailwindcss": "0.6.14",
+		"pretty-quick": "4.2.2",
+		"turbo": "^2.5.5",
+		"typescript": "5.8.3"
+	},
+	"engines": {
+		"node": ">=v22.13.1",
+		"npm": ">=11.1.0"
+	},
+	"packageManager": "npm@11.5.2",
+	"workspaces": ["apps/*", "packages/*"],
+	"publishConfig": {
+		"access": "restricted"
+	},
+	"sideEffects": false
+}

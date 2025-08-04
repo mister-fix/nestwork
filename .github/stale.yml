@@ -1,0 +1,68 @@
+# .github/stale.yml
+
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 90
+
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 30
+
+# Labels to be added to stale issues or pull requests
+labels:
+  - stale
+
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - accepted
+  - bug
+  - enhancement
+  - content
+  - content update
+  - do-not-close
+  - user-story
+
+# Label to use when marking an issue as stale
+staleLabel: stale
+
+# Set to true to ignore issues in a project (defaults to false)
+exemptProjects: false
+
+# Set to true to ignore issues in a milestone (defaults to false)
+exemptMilestones: false
+
+# Set to true to ignore issues with an assignee (defaults to false)
+exemptAssignees: false
+
+# Notify maintainers when an issue or pull request is marked as stale or closed
+notifyMaintainers: true
+
+# When to consider a pull request as stale
+# Draft PRs can be excluded
+# If false, only pull requests marked as "stale" will be considered stale
+markDraftPullRequests: false
+
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  This issue/pull request has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.
+  If it is still relevant, please provide an update within the next
+  {{ daysUntilClose }} days.
+
+# Comment to post when closing a stale Issue or Pull Request.
+closeComment: >
+  Closing this issue because it has been marked as stale for more than 365 days.
+
+# Reopen issues when they receive new activity
+reopenOnActivity: true
+
+# Limit actions to specific branches (optional)
+# only:
+#   - main
+#   - develop
+
+# Limit the number of actions per hour, from 1-30. Default is 30
+limitPerRun: 30
+
+repo:
+  # Specify the repository where these settings should apply
+  owner: mister-fix
+  name: nestwork
