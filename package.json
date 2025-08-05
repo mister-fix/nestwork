@@ -62,14 +62,8 @@
 		"turbo": "^2.5.5",
 		"typescript": "5.8.3"
 	},
-	"engines": {
-		"npm": "10.9.2",
-		"node": "v22.17.1"
-	},
-	"packageManager": "npm@11.5.2",
 	"workspaces": ["apps/*", "packages/*"],
 	"publishConfig": {
 		"access": "restricted"
-	},
-	"sideEffects": false
+	}
 }
