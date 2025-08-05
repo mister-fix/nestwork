@@ -40,6 +40,10 @@
 		"plop": "plop",
 		"docs": "open-cli https://github.com/mister-fix/nestwork/blob/main/README.md"
 	},
+	"lint-staged": {
+		"{*.js?(x),*.ts?(x)}": ["eslint --fix", "prettier --write"],
+		"!**/*.prettierrc": []
+	},
 	"devDependencies": {
 		"@commitlint/cli": "19.8.1",
 		"@commitlint/config-conventional": "19.8.1",
@@ -62,6 +66,7 @@
 		"turbo": "^2.5.5",
 		"typescript": "5.8.3"
 	},
+	"packageManager": "npm@11.5.2",
 	"workspaces": ["apps/*", "packages/*"],
 	"publishConfig": {
 		"access": "restricted"
