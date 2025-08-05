@@ -17,13 +17,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22" # Match your .nvmrc version
+          node-version: "20" # Match your .nvmrc version
 
       - name: Install dependencies
         run: npm install
 
       - name: Lint code
-        run: npm run lint
+        run: npx turbo run lint
 
       - name: Build project
-        run: npm run build
+        run: npx turbo run build
