@@ -41,6 +41,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `commitlint.config.mjs`:
   - Add ignore for dependabot
   - Modified `body-max-length`, `body-max-line-length`, `footer-max-length`, and `footer-max-line-length` rules
+- Updated `pre-commit` hook:
+  - Add step to ensure spell check is run on staged files
 
 ### Removed
 
