@@ -25,14 +25,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `stale.yml` to automatically mark inactive issues, and `dependabot.yml` for dependency management
 - Added `.vscode/settings.json` with project-level editor defaults and plugin recommendations
 - Pre-commit Git hook using `lint-staged` and `husky`
+- Configured `.env` files for `apps/web` and `apps/docs`, added tracking for environment variables in `turbo.json`
+- ESLint config in root directory to work with `lint-staged` and the `pre-commit` hook
 
 ### Changed
 
 - Updated `lint`, `commitlint`, and `build` workflows:
   - Aligned called scripts inside each workflow YAML file
   - Updated Node.js version to match the current project
+- Renamed `cspell.yml` to `spell-check.yml` to avoid CSPell interpreting file as local config
 - Updated `package.json`:
   - Removed `engines` and experimental metadata fields
+- Updated `commitlint.config.mjs`:
+  - Add ignore for dependabot
+  - Modified `body-max-length`, `body-max-line-length`, `footer-max-length`, and `footer-max-line-length` rules
+
+### Removed
+
+- Locally loaded fonts from `apps/docs`
 
 [Unreleased]: https://github.com/mister-fix/nestwork/compare/initial-commit...HEAD
 
