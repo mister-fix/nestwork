@@ -18,7 +18,6 @@ module.exports = {
 	embeddedLanguageFormatting: 'auto',
 	singleAttributePerLine: true,
 	braceStyle: 'stroustrup',
-	attributeGroups: ['^class$', '^(id|name)$', '$DEFAULT', '^aria-'],
 	plugins: [
 		'prettier-plugin-organize-imports',
 		'prettier-plugin-brace-style',
