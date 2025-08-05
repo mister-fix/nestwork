@@ -33,7 +33,7 @@ export default function Home() {
 				<div className="divide-x-muted flex items-center gap-x-2 divide-x px-4 sm:gap-x-6 sm:divide-x-0 sm:px-6">
 					<Link
 						className="flex items-center gap-x-1 pe-2 sm:pe-0"
-						href="http://localhost:3001"
+						href={`${process.env.NEXT_PUBLIC_DOCS_URL}`}
 						rel="noopener noreferrer"
 						target="_blank"
 					>
