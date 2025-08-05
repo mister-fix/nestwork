@@ -33,7 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `lint`, `commitlint`, and `build` workflows:
   - Aligned called scripts inside each workflow YAML file
   - Updated Node.js version to match the current project
-- Renamed `cspell.yml` to `spell-check.yml` to avoid CSPell interpreting file as local config
+- Updated `cspell.yml` workflow:
+  - Renamed workflow file name to `spell-check.yml` to avoid CSPell interpreting file as local config
+  - Refactored the workflow's `on` command to `on: [push, pull_request]`
 - Updated `package.json`:
   - Removed `engines` and experimental metadata fields
 - Updated `commitlint.config.mjs`:
