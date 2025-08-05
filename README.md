@@ -1,5 +1,12 @@
 # <img src="./assets/branding/nestwork-primary.svg#gh-light-mode-only" alt="Nestwork logo dark" height="30" /><img src="./assets/branding/nestwork-light.svg#gh-dark-mode-only" alt="Nestwork logo light" height="30" />
 
+![License](https://img.shields.io/github/license/mister-fix/nestwork?color=blue)
+![Version](https://img.shields.io/github/v/tag/mister-fix/nestwork?label=version)
+![Build](https://img.shields.io/github/actions/workflow/status/mister-fix/nestwork/build.yml)
+![Last Commit](https://img.shields.io/github/last-commit/mister-fix/nestwork?color=yellow)
+![Contributors](https://img.shields.io/github/contributors/mister-fix/nestwork?color=5d00ff)
+![Open Issues](https://img.shields.io/github/issues/mister-fix/nestwork?color=ff0000)
+
 **Nestwork** is a full-stack monorepo task management application (inspired by Linear/Trello), built for learning, portfolio, and eventual production use.
 
 This monorepo is powered by [Turborepo](https://turbo.build/repo) and leverages a modular architecture for scalable app and package development.
