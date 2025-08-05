@@ -1,4 +1,4 @@
-import '@repo/ui/globals.css';
+import '@repo/ui/styles/globals.css';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
