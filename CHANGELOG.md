@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `.github/`:
+  - Added `labels.json` local store for labels used in the GitHub repository
+- CodeRabbit configuration file
+
+### Changed
+
+- `README.md`:
+  - Added [quick start](./README.md#quick-start) section
+  - Added [managing labels](./README.md#managing-labels) section
+  - Updated project structure diagram in `README.md` to reflect file changes
+- `cspell.json`:
+  - Added `coderabbit` to dictionary
+
 ## [0.1.0] - 2025-08-05
 
 ### Added
