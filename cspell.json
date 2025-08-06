@@ -76,9 +76,11 @@
 		"CRDT",
 		"plopfile",
 		"serviceworker",
-		"stroustrup"
+		"stroustrup",
+		"coderabbit",
+		"coderabbitai"
 	],
-	"ignoreWords": ["Nestwork", "turborepo", "logomark", "wordmark"],
+	"ignoreWords": ["Nestwork", "coderabbit", "turborepo", "logomark", "wordmark"],
 	"import": [
 		"@cspell/dict-git/cspell-ext.json",
 		"@cspell/dict-filetypes/cspell-ext.json",
