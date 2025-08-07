@@ -76,8 +76,17 @@
 		"CRDT",
 		"plopfile",
 		"serviceworker",
-		"stroustrup"
+		"stroustrup",
+		"coderabbit",
+		"coderabbitai"
 	],
+	"patterns": [
+		{
+			"name": "hexColor",
+			"pattern": "(?:#)?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}"
+		}
+	],
+	"ignoreRegExpList": ["hexColor"],
 	"ignoreWords": ["Nestwork", "turborepo", "logomark", "wordmark"],
 	"import": [
 		"@cspell/dict-git/cspell-ext.json",
