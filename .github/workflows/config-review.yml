@@ -19,7 +19,7 @@ jobs:
       - name: List stale config files
         id: stale
         run: |
-          echo "Checking for config files not modified in the last 6 months..."
+          echo "Checking for config files not modified in the last 1 day..."
 
           ONE_DAY_AGO=$(date -d '1 day ago' +%s)
 
