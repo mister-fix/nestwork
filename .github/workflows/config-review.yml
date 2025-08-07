@@ -11,8 +11,8 @@ jobs:
       - name: Identify config files
         id: config-finder
         run: |
-          # Find files and remove './' prefix
-          CONFIG_FILES=$(find . -type f \( \
+          # Create array of files properly
+          mapfile -t FILES_ARRAY < <(find . -type f \( \
             -name "*.config.*" -o \
             -name "tsconfig*.json" -o \
             -name ".eslint*" -o \
@@ -26,18 +26,21 @@ jobs:
             -path "./.vscode/*.json" \) \
             -not -path "*/node_modules/*" \
             -not -path "*/dist/*" \
-            | sed 's|^\./||')
+            -not -path "./.git/*" \
+            -not -path "*/.turbo/*" \
+            -not -path "*/.next/*" \
+            | sed 's|^\./||' | sort)
 
-          # Format as JSON array to handle spaces/special chars
-          JSON_FILES=$(jq -n --arg files "$CONFIG_FILES" '$files | split("\n")')
+          # Convert to JSON safely
+          JSON_FILES=$(printf '%s\n' "${FILES_ARRAY[@]}" | jq -R . | jq -s .)
           echo "files=$JSON_FILES" >> $GITHUB_OUTPUT
 
       - name: Create Maintenance Issue
+        if: ${{ fromJson(steps.config-finder.outputs.files) != [] }}
         uses: actions/github-script@v6
-        if: ${{ steps.config-finder.outputs.files != '[""]' }}
         with:
           script: |
-            const files = JSON.parse(`${{ steps.config-finder.outputs.files }}`);
+            const files = ${{ steps.config-finder.outputs.files }};
             const timestamp = new Date().toISOString().split('T')[0];
 
             await github.rest.issues.create({
