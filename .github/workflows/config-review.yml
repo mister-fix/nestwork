@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "Checking for config files not modified in the last 6 months..."
 
-          SIX_MONTHS_AGO=$(date -d '6 months ago' +%s)
+          ONE_DAY_AGO=$(date -d '1 day ago' +%s)
 
           FILE_PATTERNS=(
             "**/tsconfig.json"
@@ -44,7 +44,7 @@ jobs:
           for pattern in "${FILE_PATTERNS[@]}"; do
             for file in $(find . -path "./node_modules" -prune -o -type f -name "${pattern##*/}" -print); do
               LAST_COMMIT_DATE=$(git log -1 --format="%ct" -- "$file")
-              if [[ $LAST_COMMIT_DATE -lt $SIX_MONTHS_AGO ]]; then
+              if [[ $LAST_COMMIT_DATE -lt $ONE_DAY_AGO ]]; then
                 STALE_FILES+=("$file")
               fi
             done
