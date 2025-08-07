@@ -74,9 +74,12 @@ jobs:
         with:
           script: |
             const fileList = process.env.FILE_LIST.split('\n').filter(Boolean);
-
-            const issueTitle = "🔍 Review stale config files";
+            const currentDate = new Date().toLocaleString('default', { month: 'long', year: 'numeric'})
+            const issueTitle = `Review stale config (${fileList.length} files) - ${currentDate}`;
             const formattedFiles = "```\n" + fileList.join('\n') + "\n```";
+            const ASSIGNEES = [
+              'mister-fix'
+            ]
 
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
@@ -106,7 +109,8 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: existing.number,
-                body
+                body,
+                assignees: ASSIGNEES
               });
             } else {
               await github.rest.issues.create({
@@ -114,6 +118,7 @@ jobs:
                 repo: context.repo.repo,
                 title: issueTitle,
                 body,
-                labels: ['maintenance']
+                labels: ['maintenance'],
+                assignees: ASSIGNEES
               });
             }
