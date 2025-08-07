@@ -17,7 +17,7 @@ jobs:
           node-version: 20
 
       - name: Run stale file checker
-        run: node .github/scripts/check-stale-reviews.js
+        run: node .github/scripts/check-stale-reviews.mjs
 
       - name: Create GitHub Issue
         if: env.STALE_FILES_FOUND == 'true'
