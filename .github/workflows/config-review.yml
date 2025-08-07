@@ -33,6 +33,7 @@ jobs:
             "**/turbo.json"
             "**/postcss.config.*"
             "**/next.config.*"
+            "**/eslint-config/*.*js"
             "**/tailwind.config.*"
             ".github/labels.json"
             ".github/**/*.yml"
@@ -97,6 +98,7 @@ jobs:
                 repo: context.repo.repo,
                 title: issueTitle,
                 body,
-                labels: ['maintenance']
+                labels: ['maintenance'],
+                assignees: ['@mister-fix']
               });
             }
