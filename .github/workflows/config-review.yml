@@ -83,7 +83,13 @@ jobs:
 
             const existing = issues.find(issue => issue.title === issueTitle);
 
-            const body = `Some config files have not been modified in over 6 months and may require review. ${staleFiles} _Last checked: ${new Date().toISOString()}_`;
+            const body = `
+              Some config files have not been modified in over 6 months and may require review.
+
+              ${staleFiles}
+
+              _Last checked: ${new Date().toISOString()}_
+            `;
 
             if (existing) {
               await github.rest.issues.update({
