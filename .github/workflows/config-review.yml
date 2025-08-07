@@ -1,6 +1,9 @@
 name: Check stale config files
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 */3 *" # Daily at midnight UTC
 
 jobs:
   check-stale-configs:
@@ -18,9 +21,9 @@ jobs:
       - name: List stale config files
         id: stale
         run: |
-          echo "Checking for config files not modified in the last 1 day..."
+          echo "Checking for config files not modified in the last 3 months..."
 
-          ONE_DAY_AGO=$(date -d '1 day ago' +%s)
+          THREE_MONTHS_AGO=$(date -d '3 months ago ago' +%s)
 
           FILE_PATTERNS=(
             "**/tsconfig.json"
@@ -45,7 +48,7 @@ jobs:
             for file in $(find . -path "./node_modules" -prune -o -type f -name "${pattern##*/}" -print); do
               echo "Checking file: $file"
               LAST_COMMIT_DATE=$(git log -1 --format="%ct" -- "$file")
-              if [[ $LAST_COMMIT_DATE -lt $ONE_DAY_AGO ]]; then
+              if [[ $LAST_COMMIT_DATE -lt $THREE_MONTHS_AGO ]]; then
                 STALE_FILES+=("$file")
               fi
             done
@@ -75,7 +78,7 @@ jobs:
           script: |
             const fileList = process.env.FILE_LIST.split('\n').filter(Boolean);
             const currentDate = new Date().toLocaleString('default', { month: 'long', year: 'numeric'})
-            const issueTitle = `Review stale config (${fileList.length} files) - ${currentDate}`;
+            const issueTitle = `Review stale configurations (${fileList.length} files) - ${currentDate}`;
             const formattedFiles = "```\n" + fileList.join('\n') + "\n```";
             const ASSIGNEES = [
               'mister-fix'
@@ -92,14 +95,14 @@ jobs:
 
             const body = `
               ## Stale Configuration Files
-              The following config files have not been modified in over 6 months and may require review:
+              The following config files have not been modified in over 3 months and may require review:
 
               ${formattedFiles}
 
               **Review Checklist:**
-              1. Verify all settings are still relevant
-              2. Check for deprecated options
-              3. Compare with latest tool recommendations
+              - [ ] Verify all settings are still relevant
+              - [ ] Check for deprecated options
+              - [ ] Compare with latest tool recommendations
 
               _Last checked: ${new Date().toISOString()}_
             `;
@@ -118,7 +121,7 @@ jobs:
                 repo: context.repo.repo,
                 title: issueTitle,
                 body,
-                labels: ['maintenance'],
+                labels: ['maintenance', 'automation'],
                 assignees: ASSIGNEES
               });
             }
