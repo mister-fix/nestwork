@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `.github/`:
   - Added `labels.json` local store for labels used in the GitHub repository
+  - Added `workflows/config-review.yml`: checks for stale configuration files (config files that haven't been updated in 3 months)
 - CodeRabbit configuration file
 
 ### Changed
@@ -27,7 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.github/labels.json`:
   - Reformatted alignment of keys and values in document
   - Updated color values for the following labels:
-    - "needs view", "refactor", "scope: onboarding", "scope: dev-dependencies", and "scope: ci/cd"
+    - `needs view`, `refactor`, `scope: onboarding`, `scope: dev-dependencies`, and `scope: ci/cd`
+  - Added `bug`, `maintenance`, and `automation` labels
+- `.github/dependabot.yml`:
+  - Added `automation` to list of applied labels
+- Formatted `LICENSE` file
 
 ## [0.1.0] - 2025-08-05
 
