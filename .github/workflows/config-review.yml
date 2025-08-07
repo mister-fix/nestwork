@@ -104,7 +104,6 @@ jobs:
                 repo: context.repo.repo,
                 title: issueTitle,
                 body,
-                labels: ['maintenance'],
-                assignees: ['@mister-fix']
+                labels: ['maintenance']
               });
             }
