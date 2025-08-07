@@ -25,7 +25,7 @@ jobs:
             -path "./.vscode/*.json" \
             -not -path "*/node_modules/*" \
             -not -path "*/dist/*" \
-          )
+          ))
           echo "files=${CONFIG_FILES}" >> $GITHUB_OUTPUT
 
       - name: Create Maintenance Issue
