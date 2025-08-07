@@ -76,7 +76,7 @@ jobs:
             const fileList = process.env.FILE_LIST.split('\n').filter(Boolean);
 
             const issueTitle = "🔍 Review stale config files";
-            const formattedFiles = fileList.map(f => `- ${f}`).join('\n');
+            const formattedFiles = "```\n" + fileList.join('\n') + "\n```";
 
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
