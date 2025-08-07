@@ -26,6 +26,7 @@ reviews:
   abort_on_close: true
   disable_cache: false
   auto_review:
+    enabled: true
     ignore_title_keywords:
       - "dependabot"
       - "bump"
