@@ -1,0 +1,44 @@
+name: Config File Review
+
+on: [push, pull_request]
+
+jobs:
+  track-configs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Identify config files
+        id: config-finder
+        run: |
+          CONFIG_FILES=$(find . -type f \( \
+            -name "*.config.*" -o \
+            -name "tsconfig*.json" -o \
+            -name ".eslint*" -o \
+            -name ".prettier*" -o \
+            -name "package.json" -o \
+            -name "turbo.json" -o \
+            -name ".npmrc" -o \
+            -name ".nvmrc" -o \
+            -name ".git*" -o \
+            -path "./.github/*.yml" -o \
+            -path "./.vscode/*.json" \
+            -not -path "*/node_modules/*" \
+            -not -path "*/dist/*" \
+          )
+          echo "files=${CONFIG_FILES}" >> $GITHUB_OUTPUT
+
+      - name: Create Maintenance Issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const files = `${{ steps.config-finder.outputs.files }}`.split('\n');
+            const timestamp = new Date().toISOString().split('T')[0];
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Maintenance] Configuration File Review (${timestamp})`,
+              body: `The following configuration files need review:\n\n${files.map(f => `- [ ] ${f}`).join('\n')}`,
+              labels: ['maintenance', 'automation']
+            });
