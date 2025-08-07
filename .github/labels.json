@@ -1,46 +1,77 @@
 [
-	{ "name": "backlog", "color": "#FEF2C0", "description": "Planned but not prioritized" },
-	{ "name": "ready", "color": "#BFDADC", "description": "Ready to begin implementation" },
-	{ "name": "in progress", "color": "#A2EEEF", "description": "Actively being worked on" },
+	{
+		"name": "backlog",
+		"color": "FEF2C0",
+		"description": "Planned but not prioritized"
+	},
+	{
+		"name": "ready",
+		"color": "BFDADC",
+		"description": "Ready to begin implementation"
+	},
 	{
 		"name": "blocked",
-		"color": "#F9D0C4",
+		"color": "F9D0C4",
 		"description": "Blocked by another task or dependency"
 	},
 	{
 		"name": "needs review",
-		"color": "#FEF2C0",
+		"color": "FBCA04",
 		"description": "Awaiting code/design review"
 	},
 	{
 		"name": "question",
-		"color": "#D876E3",
+		"color": "D876E3",
 		"description": "Further information is requested"
 	},
-	{ "name": "done", "color": "#C5DEF5", "description": "Task completed and merged" },
-	{ "name": "feature", "color": "#0E8A16", "description": "New user-facing functionality" },
-	{ "name": "chore", "color": "#CCCCCC", "description": "Internal maintenance or tooling" },
-	{ "name": "refactor", "color": "#FBCA04", "description": "Code quality improvement" },
-	{ "name": "test", "color": "#5319E7", "description": "Testing-related changes" },
-	{ "name": "design", "color": "#FF9C9C", "description": "UI/UX tasks" },
+	{
+		"name": "done",
+		"color": "40C2FE",
+		"description": "Task completed and merged"
+	},
+	{
+		"name": "feature",
+		"color": "0E8A16",
+		"description": "New user-facing functionality"
+	},
+	{
+		"name": "chore",
+		"color": "CCCCCC",
+		"description": "Internal maintenance or tooling"
+	},
+	{
+		"name": "refactor",
+		"color": "F7D580",
+		"description": "Code quality improvement"
+	},
+	{
+		"name": "test",
+		"color": "5319E7",
+		"description": "Testing-related changes"
+	},
+	{
+		"name": "design",
+		"color": "FF9C9C",
+		"description": "UI/UX tasks"
+	},
 	{
 		"name": "dependencies",
-		"color": "#CEA107",
+		"color": "CEA107",
 		"description": "Changes to installed dependencies (version upgrades, etc)"
 	},
 	{
 		"name": "documentation",
-		"color": "#0075CA",
+		"color": "0075CA",
 		"description": "Improvements or additions to documentation"
 	},
 	{
 		"name": "duplicate",
-		"color": "#CFD3D7",
+		"color": "CFD3D7",
 		"description": "This issue or pull request already exists"
 	},
 	{
 		"name": "wontfix",
-		"color": "#FFFFFF",
+		"color": "FFFFFF",
 		"description": "This will not be worked on"
 	},
 	{
@@ -50,65 +81,92 @@
 	},
 	{
 		"name": "enhancement",
-		"color": "#A2EEEF",
+		"color": "A2EEEF",
 		"description": "Improvements to existing features"
 	},
 	{
 		"name": "user story",
-		"color": "#6567FD",
+		"color": "6567FD",
 		"description": "Represents a user story following the 'As a... I want... so that...' format"
 	},
 	{
 		"name": "github-actions",
-		"color": "#C8442F",
+		"color": "C8442F",
 		"description": "Changes, additions, or updates to GitHub actions"
 	},
 	{
 		"name": "good first issue",
-		"color": "#7057ff",
+		"color": "7057FF",
 		"description": "Good for newcomers"
 	},
 	{
 		"name": "help wanted",
-		"color": "#008672",
+		"color": "008672",
 		"description": "Extra attention is needed"
 	},
 	{
 		"name": "high priority",
-		"color": "#AFFF00",
+		"color": "AFFF00",
 		"description": "Must be addressed immediately (blocking feature, major bug, etc.)"
 	},
 	{
 		"name": "in progress",
-		"color": "#A2EEEF",
+		"color": "565501",
 		"description": "Actively being worked on"
 	},
 	{
 		"name": "invalid",
-		"color": "#E4E669",
+		"color": "E4E669",
 		"description": "This doesn't seem right"
 	},
 	{
 		"name": "low priority",
-		"color": "#F47E4B",
+		"color": "F47E4B",
 		"description": "Useful or nice-to-have, but not urgent (no impact to system if delayed)"
 	},
 	{
 		"name": "medium priority",
-		"color": "#83B8F0",
+		"color": "83B8F0",
 		"description": "Important, but not blocking (part of current milestone/sprint)"
 	},
-	{ "name": "scope: auth", "color": "#006B75", "description": "Authentication" },
-	{ "name": "scope: ui", "color": "#FBCA04", "description": "UI & styling" },
-	{ "name": "scope: api", "color": "#D4C5F9", "description": "API or backend logic" },
-	{ "name": "scope: dashboard", "color": "#C2E0C6", "description": "Main app dashboard" },
-	{ "name": "scope: onboarding", "color": "#F9D0C4", "description": "User onboarding flows" },
-	{ "name": "scope: docs", "color": "#E7E7E7", "description": "Documentation-related" },
+	{
+		"name": "scope: auth",
+		"color": "006B75",
+		"description": "Authentication"
+	},
+	{
+		"name": "scope: ui",
+		"color": "A2844E",
+		"description": "UI & styling"
+	},
+	{
+		"name": "scope: api",
+		"color": "D4C5F9",
+		"description": "API or backend logic"
+	},
+	{
+		"name": "scope: dashboard",
+		"color": "C2E0C6",
+		"description": "Main app dashboard"
+	},
+	{
+		"name": "scope: onboarding",
+		"color": "FAD6C9",
+		"description": "User onboarding flows"
+	},
+	{
+		"name": "scope: docs",
+		"color": "E7E7E7",
+		"description": "Documentation-related"
+	},
 	{
 		"name": "scope: dev-experience",
-		"color": "#FEF2C0",
+		"color": "FFF8B8",
 		"description": "Tooling & DX improvements"
 	},
-	{ "name": "scope: ci/cd", "color": "#BFDADC", "description": "Builds, tests, deployment" },
-	{ "name": "scope: project", "color": "#EDEDED", "description": "Meta or cross-cutting concerns" }
+	{
+		"name": "scope: ci/cd",
+		"color": "B0D9DB",
+		"description": "Builds, tests, deployment"
+	}
 ]
