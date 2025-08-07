@@ -80,7 +80,14 @@
 		"coderabbit",
 		"coderabbitai"
 	],
-	"ignoreWords": ["Nestwork", "coderabbit", "turborepo", "logomark", "wordmark"],
+	"patterns": [
+		{
+			"name": "hexColor",
+			"pattern": "(?:#)?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}"
+		}
+	],
+	"ignoreRegExpList": ["hexColor"],
+	"ignoreWords": ["Nestwork", "turborepo", "logomark", "wordmark"],
 	"import": [
 		"@cspell/dict-git/cspell-ext.json",
 		"@cspell/dict-filetypes/cspell-ext.json",
