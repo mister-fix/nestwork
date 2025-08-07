@@ -57,22 +57,26 @@ jobs:
           else
             echo "Found ${#STALE_FILES[@]} stale config files:"
             printf '%s\n' "${STALE_FILES[@]}"
+
+            # Properly format the output
+            FILE_LIST=$(printf '%s\n' "${STALE_FILES[@]}")
             echo "stale=1" >> $GITHUB_OUTPUT
             echo "files<<EOF" >> $GITHUB_OUTPUT
-            printf '%s\n' "${STALE_FILES[@]}" >> $GITHUB_OUTPUT
+            echo "$FILE_LIST" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           fi
 
       - name: Create or update issue
         if: steps.stale.outputs.stale == '1'
         uses: actions/github-script@v7
+        env:
+          FILE_LIST: ${{ steps.stale.outputs.files }}
         with:
           script: |
-            const staleFiles = `\`\`\`
-            ${process.env['files']}
-            \`\`\``;
+            const fileList = process.env.FILE_LIST.split('\n').filter(Boolean);
 
             const issueTitle = "🔍 Review stale config files";
+            const formattedFiles = fileList.map(f => `- ${f}`).join('\n');
 
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
@@ -84,9 +88,15 @@ jobs:
             const existing = issues.find(issue => issue.title === issueTitle);
 
             const body = `
-              Some config files have not been modified in over 6 months and may require review.
+              ## Stale Configuration Files
+              The following config files have not been modified in over 6 months and may require review:
 
-              ${staleFiles}
+              ${formattedFiles}
+
+              **Review Checklist:**
+              1. Verify all settings are still relevant
+              2. Check for deprecated options
+              3. Compare with latest tool recommendations
 
               _Last checked: ${new Date().toISOString()}_
             `;
