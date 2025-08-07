@@ -1,57 +1,28 @@
-name: Config File Review
+name: Check Stale Last Reviewed Files
 
 on: [push, pull_request]
 
 jobs:
-  track-configs:
+  review-check:
+    name: Check for stale last-reviewed files
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Identify config files
-        id: config-finder
-        run: |
-          # Create array of files properly
-          mapfile -t FILES_ARRAY < <(find . -type f \( \
-            -name "*.config.*" -o \
-            -name "tsconfig*.json" -o \
-            -name ".eslint*" -o \
-            -name ".prettier*" -o \
-            -name "package.json" -o \
-            -name "turbo.json" -o \
-            -name ".npmrc" -o \
-            -name ".nvmrc" -o \
-            -name ".git*" -o \
-            -path "./.github/*.yml" -o \
-            -path "./.vscode/*.json" \) \
-            -not -path "*/node_modules/*" \
-            -not -path "*/dist/*" \
-            -not -path "./.git/*" \
-            -not -path "*/.turbo/*" \
-            -not -path "*/.next/*" \
-            | sed 's|^\./||' | sort)
-
-          # Convert to JSON safely
-          JSON_FILES=$(printf '%s\n' "${FILES_ARRAY[@]}" | jq -R . | jq -s .)
-          echo "files=$JSON_FILES" >> $GITHUB_OUTPUT
-
-      - name: Create Maintenance Issue
-        if: ${{ fromJson(steps.config-finder.outputs.files) != [] }}
-        uses: actions/github-script@v6
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          script: |
-            const files = ${{ steps.config-finder.outputs.files }};
-            const timestamp = new Date().toISOString().split('T')[0];
+          node-version: 20
 
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `[Maintenance] Configuration File Review (${timestamp})`,
-              body: `The following ${files.length} configuration files need review:\n\n` +
-                    files.map(f => `- [ ] \`${f}\``).join('\n') +
-                    `\n\n**Review Checklist:**\n` +
-                    `1. Verify settings are still relevant\n` +
-                    `2. Check for deprecated options\n` +
-                    `3. Compare with latest tool recommendations`,
-              labels: ['maintenance', 'automation']
-            });
+      - name: Run stale file checker
+        run: node .github/scripts/check-stale-reviews.js
+
+      - name: Create GitHub Issue
+        if: env.STALE_FILES_FOUND == 'true'
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: "🔍 Review stale files (>6 months old)"
+          content-filepath: .github/stale-files-report.md
+          labels: maintenance, automation
