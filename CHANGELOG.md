@@ -20,7 +20,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added [managing labels](./README.md#managing-labels) section
   - Updated project structure diagram in `README.md` to reflect file changes
 - `cspell.json`:
-  - Added `coderabbit` to dictionary
+  - Added `coderabbit` and `coderabbitai` to dictionary
+    - Removed conflicting of "coderabbit" in the `ignoreWords` list
+- CodeRabbit configuration:
+  - Explicit declaration of `auto_review` option as `enabled: true`
+- `.github/labels.json`:
+  - Reformatted alignment of keys and values in document
+  - Updated color values for the following labels:
+    - "needs view", "refactor", "scope: onboarding", "scope: dev-dependencies", and "scope: ci/cd"
 
 ## [0.1.0] - 2025-08-05
 
