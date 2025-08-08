@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2025-08-07
+
 ### Added
 
 - `.github/`:
@@ -33,6 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.github/dependabot.yml`:
   - Added `automation` to list of applied labels
 - Formatted `LICENSE` file
+- Version changes for dependencies:
+  - Bumped `@next/eslint-plugin-next` from v15.4.5 to v15.4.6
+  - Bumped `next` from v15.4.5 to v15.4.6
+  - Bumped `lucide-react` from v0.546.0 to v0.537.0
 
 ## [0.1.0] - 2025-08-05
 
@@ -78,4 +84,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Locally loaded fonts from `apps/docs`
 
 [Unreleased]: https://github.com/mister-fix/nestwork/compare/v0.1.0...HEAD
+[0.1.1]: https://github.com/mister-fix/nestwork/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/mister-fix/nestwork/tree/v0.1.0
