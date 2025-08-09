@@ -23,6 +23,7 @@
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"check-types": "turbo run check-types",
 		"prepare": "husky || true",
+		"cspell": "cspell ** --dot",
 		"plop": "plop",
 		"docs": "open-cli https://github.com/mister-fix/nestwork/blob/main/README.md"
 	},
