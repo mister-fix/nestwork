@@ -1,0 +1,23 @@
+{
+	"recommendations": [
+		"bradlc.vscode-tailwindcss",
+		"aaron-bond.better-comments",
+		"formulahendry.auto-rename-tag",
+		"streetsidesoftware.code-spell-checker",
+		"mikestead.dotenv",
+		"editorconfig.editorconfig",
+		"dsznajder.es7-react-js-snippets",
+		"dbaeumer.vscode-eslint",
+		"donjayamanne.githistory",
+		"davidanson.vscode-markdownlint",
+		"cardinal90.multi-cursor-case-preserve",
+		"nextnav.nextnav",
+		"christian-kohler.npm-intellisense",
+		"christian-kohler.path-intellisense",
+		"csstools.postcss",
+		"esbenp.prettier-vscode",
+		"yoavbls.pretty-ts-errors",
+		"infeng.vscode-react-typescript",
+		"redhat.vscode-yaml"
+	]
+}
