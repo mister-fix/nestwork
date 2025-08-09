@@ -1,0 +1,126 @@
+# Ensure consistent line endings for text files across OS
+* text=auto eol=lf
+
+# Declare text files explicitly to avoid automatic conversion issues
+*.js        text eol=lf
+*.jsx        text eol=lf
+*.ts        text eol=lf
+*.tsx        text eol=lf
+*.json      text eol=lf
+*.html      text eol=lf
+*.ejs			  text eol=lf
+*.css       text eol=lf
+*.scss      text eol=lf
+*.sass      text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.sh        text eol=lf
+*.env       text eol=lf
+*.graphql   text eol=lf
+*.toml			text eol=lf
+
+# Binary files should not be modified
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.svg       binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.eot       binary
+*.mp4       binary
+*.mp3       binary
+*.zip       binary
+
+# Exclude specific directories or files from line ending normalization
+/node_modules/ export-ignore
+/dist/ export-ignore
+/build/ export-ignore
+/.git/ export-ignore
+/.vscode/ export-ignore
+/.idea/ export-ignore
+
+# Ignore node_modules from linguist analysis
+**/node_modules/* linguist-vendored
+**/dist/* linguist-vendored
+**/build/* linguist-vendored
+**/.next/** linguist-vendored
+**/coverage/** linguist-vendored
+**/out/** linguist-vendored
+
+# Mark specific files as executable (if needed)
+# bin/*.js eol=lf
+
+# Handle package-lock.json and yarn.lock files
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+pnpm-lock.yaml text eol=lf
+
+# Avoid conflicts with lock files
+package-lock.json -merge
+yarn.lock -merge
+pnpm-lock.yaml -merge
+
+# Ensure .env files are treated as text but not normalized (to preserve secrets)
+.env text eol=lf
+.env.* text eol=lf
+
+# Mark log files as binary to avoid line ending issues
+*.log binary
+
+# Mark test files as text
+*.test.js text eol=lf
+*.spec.js text eol=lf
+
+# Handle linguist overrides (useful for GitHub language statistics)
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.js linguist-language=TypeScript
+*.jsx linguist-language=TypeScript
+*.scss linguist-language=SCSS
+*.sass linguist-language=Sass
+*.css linguist-language=CSS
+*.json linguist-language=JSON
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.html linguist-language=HTML
+*.md linguist-language=Markdown
+*.sh linguist-language=Shell
+
+# Detect certain languages
+*.yml linguist-detectable
+*.yaml linguist-detectable
+
+# Treat CI/CD and config files as source
+.github/** linguist-language=YAML
+.vscode/** linguist-language=JSON
+
+# Treat lock files as source
+package-lock.json linguist-language=JSON
+
+# Ignore node_modules completely
+node_modules/** linguist-vendored
+
+# Mark configuration files as text
+.eslintrc text eol=lf
+.prettierrc text eol=lf
+.babelrc text eol=lf
+.editorconfig text eol=lf
+.prettierignore text eol=lf
+commitlint.config.js text eol=lf
+
+# Mark Docker-related files as text
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+docker-compose.yml text eol=lf
+
+# Mark CI/CD configuration files as text
+.github/**/*.yml text eol=lf
+.gitlab-ci.yml text eol=lf
+.travis.yml text eol=lf
+
+# Mark Fly.io configuration files as text
+fly.toml text eol=lf
