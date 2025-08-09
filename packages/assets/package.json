@@ -1,0 +1,12 @@
+{
+	"name": "@repo/assets",
+	"version": "0.1.0",
+	"private": true,
+	"description": "",
+	"exports": {
+		"./*": "./*"
+	},
+	"devDependencies": {
+		"@repo/typescript-config": "*"
+	}
+}
