@@ -25,7 +25,6 @@ export default function Home() {
 							src={icon}
 							height={35}
 							width={35}
-							onChange={() => console.log('changed')}
 						/>
 					</div>
 					<h1 className="text-4xl font-semibold -tracking-widest text-[#121216]">
