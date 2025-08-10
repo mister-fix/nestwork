@@ -6,6 +6,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/mister-fix/nestwork?color=yellow)
 ![Contributors](https://img.shields.io/github/contributors/mister-fix/nestwork?color=5d00ff)
 ![Open Issues](https://img.shields.io/github/issues/mister-fix/nestwork?color=ff0000)
+![GitHub Repo stars](https://img.shields.io/github/stars/mister-fix/nestwork)
 
 **Nestwork** is a full-stack monorepo task management application (inspired by Linear/Trello), built for learning, portfolio, and eventual production use.
 
