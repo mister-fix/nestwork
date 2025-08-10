@@ -40,7 +40,7 @@ export default function Home() {
 						<Image
 							aria-hidden
 							alt="Window icon"
-							src="/window.svg"
+							src="/icons/window.svg"
 							height={16}
 							width={16}
 						/>
@@ -55,7 +55,7 @@ export default function Home() {
 						<Image
 							aria-hidden
 							alt="Globe icon"
-							src="/globe.svg"
+							src="/icons/globe.svg"
 							height={16}
 							width={16}
 						/>
