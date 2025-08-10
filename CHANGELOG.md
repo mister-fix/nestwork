@@ -7,14 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-08-09
+
+### Added
+
+- GitHub repo stars badge in README file
+
 ### Changed
 
-- Re-initialized entire repository due to Turborepo dependency degradation.
-- Re-added branding material in the root `assets/` folder.
+- Re-initialized entire repository due to Turborepo dependency degradation
+- Re-added branding material in the root `assets/` folder
 
 ### Fixed
 
-- Location for local icons needed in the `apps/docs/app/page.tsx` file.
+- Location for local icons needed in the `apps/docs/app/page.tsx` file
+- Tag links in this CHANGELOG file
 
 ## [0.1.1] - 2025-08-07
 
@@ -92,6 +99,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Locally loaded fonts from `apps/docs`
 
-[Unreleased]: https://github.com/mister-fix/nestwork/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/mister-fix/nestwork/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/mister-fix/nestwork/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/mister-fix/nestwork/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/mister-fix/nestwork/tree/v0.1.0
