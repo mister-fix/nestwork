@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Re-initialized entire repository due to Turborepo dependency degradation.
+- Re-added branding material in the root `assets/` folder.
+
+### Fixed
+
+- Location for local icons needed in the `apps/docs/app/page.tsx` file.
 
 ## [0.1.1] - 2025-08-07
 
