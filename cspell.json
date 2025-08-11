@@ -55,7 +55,8 @@
 		"fonts",
 		"node",
 		"project-dependencies",
-		"project-terms"
+		"project-terms",
+		"lorem-ipsum"
 	],
 	"dictionaryDefinitions": [],
 	"files": ["**/*.{txt,md,json,js,cjs,mjs,ts,jsx,tsx,yml,yaml,toml}"],
@@ -78,7 +79,9 @@
 		"serviceworker",
 		"stroustrup",
 		"coderabbit",
-		"coderabbitai"
+		"coderabbitai",
+		"Laravel",
+		"Replit"
 	],
 	"patterns": [
 		{
@@ -87,10 +90,11 @@
 		}
 	],
 	"ignoreRegExpList": ["hexColor"],
-	"ignoreWords": ["Nestwork", "turborepo", "logomark", "wordmark"],
+	"ignoreWords": ["Nestwork", "turborepo", "logomark", "wordmark", "faaast", "squeezy"],
 	"import": [
 		"@cspell/dict-git/cspell-ext.json",
 		"@cspell/dict-filetypes/cspell-ext.json",
-		"@cspell/dict-typescript/cspell-ext.json"
+		"@cspell/dict-typescript/cspell-ext.json",
+		"@cspell/dict-lorem-ipsum/cspell-ext.json"
 	]
 }
