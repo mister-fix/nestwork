@@ -41,9 +41,8 @@ export function VerificationEmail(props: EmailProps) {
 							<Text>Hi {name?.split(' ')[0]},</Text>
 							<Text>
 								Welcome to Nestwork, the modern task management platform built
-								for high-performance teams. We&apos;re excited to help you
-								supercharge your workflow. Click the button below to verify your
-								account and create a workspace.
+								for high-performance teams. Click the button below to verify
+								your account and create a workspace.
 							</Text>
 							<Button
 								className="block rounded-md bg-[#0e0c7c] px-6 py-3 text-center text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0e0c7c]/80"
@@ -56,7 +55,7 @@ export function VerificationEmail(props: EmailProps) {
 								<Link href="https://nestwork-docs.vercel.app/">docs</Link> for
 								more info on how you can maximize your experience.
 							</Text>
-							<Text>
+							{/* <Text>
 								We are always available to answer any questions and provide
 								support, you can{' '}
 								<Link href="https://nestwork-web.vercel.app/">contact us</Link>{' '}
@@ -65,10 +64,10 @@ export function VerificationEmail(props: EmailProps) {
 									support page
 								</Link>{' '}
 								where you may be able to find answers to some of your questions.
-							</Text>
+							</Text> */}
 							<Text>
-								Thank you for becoming a member, and we look forward to seeing
-								your growth in productivity in the future.
+								Thank you for becoming a member, and we look forward to helping
+								you supercharge your workflow.
 							</Text>
 							<Text>&mdash; The Nestwork Team.</Text>
 						</Section>
