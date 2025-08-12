@@ -18,5 +18,12 @@
 			"persistent": true
 		}
 	},
-	"globalEnv": ["NEXT_PUBLIC_WEB_URL", "NEXT_PUBLIC_DOCS_URL", "DATABASE_URL", "RESEND_API_KEY"]
+	"globalEnv": [
+		"NEXT_PUBLIC_WEB_URL",
+		"NEXT_PUBLIC_DOCS_URL",
+		"DATABASE_URL",
+		"RESEND_API_KEY",
+		"BETTER_AUTH_URL",
+		"BETTER_AUTH_SECRET"
+	]
 }
