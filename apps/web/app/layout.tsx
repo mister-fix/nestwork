@@ -3,7 +3,7 @@ import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 import { Fragment } from 'react';
 
-import { ToasterProvider } from '@/components/ui/toaster-provider';
+import { ToasterProvider } from '@/providers/toaster-provider';
 
 import '@repo/ui/styles/globals.css';
 
