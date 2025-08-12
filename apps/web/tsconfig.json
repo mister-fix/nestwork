@@ -1,6 +1,8 @@
 {
 	"extends": "@repo/typescript-config/nextjs.json",
 	"compilerOptions": {
+		"moduleResolution": "bundler",
+		"strict": true,
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./*"],
@@ -11,8 +13,16 @@
 			{
 				"name": "next"
 			}
-		]
+		],
+		"types": ["better-auth"]
 	},
-	"include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "next.config.js", ".next/types/**/*.ts"],
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"next-env.d.ts",
+		"next.config.js",
+		".next/types/**/*.ts",
+		"types"
+	],
 	"exclude": ["node_modules"]
 }
