@@ -25,16 +25,16 @@ export function VerificationEmail(props: EmailProps) {
 		<Html lang="en">
 			<Tailwind>
 				<Head />
-				<Body>
+				<Body className="bg-[#f6f9fc]">
 					<Preview>The workspace platform that supercharges your team.</Preview>
-					<Container>
+					<Container className="rounded-md bg-white p-4 sm:p-6">
 						<Section className="border-b border-neutral-300">
 							<Img
 								className="mx-auto my-0"
 								alt="Nestwork logo"
 								src={`${process.env.NEXT_PUBLIC_BASE_URL}/nestwork-primary.png`}
-								height={28}
-								width={120}
+								height="auto"
+								width={125}
 							/>
 							<Hr className="mx-0 my-5 border-neutral-300" />
 
@@ -49,7 +49,7 @@ export function VerificationEmail(props: EmailProps) {
 								workspace.
 							</Text>
 							<Button
-								className="block rounded-md bg-[#0e0c7c] px-6 py-3 text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0e0c7c]/80"
+								className="block rounded-md bg-[#0e0c7c] px-6 py-3 text-center text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0e0c7c]/80"
 								href={verificationUrl}
 							>
 								Get started
