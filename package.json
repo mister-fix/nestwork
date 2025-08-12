@@ -71,5 +71,8 @@
 		"next.js app",
 		"saas",
 		"turborepo"
-	]
+	],
+	"dependencies": {
+		"zod": "4.0.15"
+	}
 }
