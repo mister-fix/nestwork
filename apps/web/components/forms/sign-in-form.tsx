@@ -40,7 +40,6 @@ export function SignInForm({
 	});
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
-		console.log(values);
 		try {
 			startTransition(async () => {
 				const response = await signInUser(values.email, values.password);
