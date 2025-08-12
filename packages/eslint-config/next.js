@@ -50,6 +50,12 @@ export const nextJsConfig = [
 	},
 	{
 		rules: {
+			'perfectionist/sort-objects': [
+				'off',
+				{
+					type: 'unsorted',
+				},
+			],
 			'perfectionist/sort-imports': [
 				'error',
 				{
