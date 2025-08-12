@@ -27,7 +27,7 @@ export function VerificationEmail(props: EmailProps) {
 				<Head />
 				<Body className="bg-[#f6f9fc]">
 					<Preview>The workspace platform that supercharges your team.</Preview>
-					<Container className="rounded-md bg-white p-4 sm:p-6">
+					<Container className="rounded-md bg-white p-2">
 						<Section className="border-b border-neutral-300">
 							<Img
 								className="mx-auto my-0"
@@ -42,11 +42,8 @@ export function VerificationEmail(props: EmailProps) {
 							<Text>
 								Welcome to Nestwork, the modern task management platform built
 								for high-performance teams. We&apos;re excited to help you
-								supercharge your workflow.
-							</Text>
-							<Text>
-								Click the button below to verify your account and create a
-								workspace.
+								supercharge your workflow. Click the button below to verify your
+								account and create a workspace.
 							</Text>
 							<Button
 								className="block rounded-md bg-[#0e0c7c] px-6 py-3 text-center text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0e0c7c]/80"
@@ -75,6 +72,7 @@ export function VerificationEmail(props: EmailProps) {
 							</Text>
 							<Text>&mdash; The Nestwork Team.</Text>
 						</Section>
+						<Hr className="mx-0 my-1 border-neutral-300" />
 						<Section className="text-center">
 							<Text className="text-xs text-gray-400">
 								&copy; {new Date().getFullYear()} Nestwork. All rights reserved.
