@@ -1,0 +1,1 @@
+ALTER TABLE "sessions" ADD COLUMN "ip_address" text;

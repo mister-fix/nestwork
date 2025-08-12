@@ -1,0 +1,55 @@
+{
+	"version": "7",
+	"dialect": "postgresql",
+	"entries": [
+		{
+			"idx": 0,
+			"version": "7",
+			"when": 1754961167967,
+			"tag": "0000_whole_earthquake",
+			"breakpoints": true
+		},
+		{
+			"idx": 1,
+			"version": "7",
+			"when": 1754961371247,
+			"tag": "0001_bumpy_brood",
+			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "7",
+			"when": 1754961598964,
+			"tag": "0002_daffy_pandemic",
+			"breakpoints": true
+		},
+		{
+			"idx": 3,
+			"version": "7",
+			"when": 1754962855659,
+			"tag": "0003_rainy_tinkerer",
+			"breakpoints": true
+		},
+		{
+			"idx": 4,
+			"version": "7",
+			"when": 1754962948808,
+			"tag": "0004_young_patch",
+			"breakpoints": true
+		},
+		{
+			"idx": 5,
+			"version": "7",
+			"when": 1754963080643,
+			"tag": "0005_woozy_spacker_dave",
+			"breakpoints": true
+		},
+		{
+			"idx": 6,
+			"version": "7",
+			"when": 1754963375843,
+			"tag": "0006_blushing_may_parker",
+			"breakpoints": true
+		}
+	]
+}
