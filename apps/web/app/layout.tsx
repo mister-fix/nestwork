@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
+import { Fragment } from 'react';
+
+import { ToasterProvider } from '@/components/ui/toaster-provider';
 
 import '@repo/ui/styles/globals.css';
 
@@ -26,8 +30,23 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${inter.className} antialiased`}>{children}</body>
+		<html
+			suppressHydrationWarning
+			lang="en"
+		>
+			<body className={`${inter.className} antialiased`}>
+				<ThemeProvider
+					disableTransitionOnChange
+					enableSystem
+					attribute="class"
+					defaultTheme="system"
+				>
+					<Fragment>
+						{children}
+						<ToasterProvider />
+					</Fragment>
+				</ThemeProvider>
+			</body>
 		</html>
 	);
 }
