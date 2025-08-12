@@ -25,9 +25,9 @@ export function VerificationEmail(props: EmailProps) {
 		<Html lang="en">
 			<Tailwind>
 				<Head />
-				<Body className="bg-[#f6f9fc]">
+				<Body className="bg-[#f6f9fc] py-8">
 					<Preview>The workspace platform that supercharges your team.</Preview>
-					<Container className="rounded-md bg-white p-2">
+					<Container className="rounded-md bg-white p-4">
 						<Section className="border-b border-neutral-300">
 							<Img
 								className="mx-auto my-0"
@@ -36,25 +36,30 @@ export function VerificationEmail(props: EmailProps) {
 								height="auto"
 								width={125}
 							/>
-							<Hr className="mx-0 my-5 border-neutral-300" />
+
+							<Hr className="mx-0 my-4 border-neutral-300" />
 
 							<Text>Hi {name?.split(' ')[0]},</Text>
+
 							<Text>
 								Welcome to Nestwork, the modern task management platform built
 								for high-performance teams. Click the button below to verify
 								your account and create a workspace.
 							</Text>
+
 							<Button
 								className="block rounded-md bg-[#0e0c7c] px-6 py-3 text-center text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0e0c7c]/80"
 								href={verificationUrl}
 							>
 								Get started
 							</Button>
+
 							<Text>
 								When you get a chance, consider viewing our{' '}
 								<Link href="https://nestwork-docs.vercel.app/">docs</Link> for
 								more info on how you can maximize your experience.
 							</Text>
+
 							{/* <Text>
 								We are always available to answer any questions and provide
 								support, you can{' '}
@@ -65,15 +70,17 @@ export function VerificationEmail(props: EmailProps) {
 								</Link>{' '}
 								where you may be able to find answers to some of your questions.
 							</Text> */}
+
 							<Text>
 								Thank you for becoming a member, and we look forward to helping
 								you supercharge your workflow.
 							</Text>
+
 							<Text>&mdash; The Nestwork Team.</Text>
-						</Section>
-						<Hr className="mx-0 my-1 border-neutral-300" />
-						<Section className="text-center">
-							<Text className="text-xs text-gray-400">
+
+							<Hr className="mx-0 my-4 border-neutral-300" />
+
+							<Text className="text-center text-xs text-gray-400">
 								&copy; {new Date().getFullYear()} Nestwork. All rights reserved.
 							</Text>
 						</Section>
