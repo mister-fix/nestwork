@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
-import { ForgotPasswordForm } from '@/components/forms/forgot-password-form';
+import { ResetPasswordForm } from '@/components/forms/reset-password-form';
 import { getSession } from '@/lib/auth';
 
 export default async function Page() {
@@ -11,13 +11,12 @@ export default async function Page() {
 	return (
 		<div className="flex flex-col items-center gap-6">
 			<div className="flex flex-col items-center gap-2 text-center">
-				<h1 className="text-2xl font-bold">Forgot your password?</h1>
+				<h1 className="text-2xl font-bold">Reset password</h1>
 				<p className="text-muted-foreground text-sm text-balance">
-					Enter the email linked to your account to receive instructions on how
-					to reset your password.
+					Enter your new account password
 				</p>
 			</div>
-			<ForgotPasswordForm />
+			<ResetPasswordForm />
 		</div>
 	);
 }

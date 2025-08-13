@@ -5,7 +5,7 @@ import { Button } from '@repo/ui/components/button';
 import { Input } from '@repo/ui/components/input';
 import { Label } from '@repo/ui/components/label';
 import { cn } from '@repo/ui/lib/utils';
-import { Eye, EyeOff, LoaderCircle } from 'lucide-react';
+import { CircleAlert, Eye, EyeOff, LoaderCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -14,12 +14,17 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
+import { FormMessage } from '@/components/form-message';
 import { signInUser } from '@/server/users';
 
 const formSchema = z.object({
-	email: z.email({ message: 'Invalid email address.' }),
+	email: z
+		.string()
+		.min(1, { message: 'Email is required.' })
+		.email({ message: 'Invalid email address.' }),
 	password: z
 		.string()
+		.min(1, { message: 'Password is required.' })
 		.min(8, { message: 'Password must be at least 8 characters long.' }),
 });
 
@@ -63,17 +68,29 @@ export function SignInForm({
 			className={cn('flex flex-col items-center gap-6', className)}
 			{...props}
 			onSubmit={form.handleSubmit(onSubmit)}
+			noValidate
 		>
-			<div className="grid w-sm gap-6 lg:w-xl">
+			<div className="grid w-xs gap-6 sm:w-sm md:w-md">
 				<div className="grid gap-3">
 					<Label htmlFor="email">Email</Label>
-					<Input
-						id="email"
-						placeholder="m@example.com"
-						type="email"
-						required
-						{...form.register('email')}
-					/>
+					<div className="relative">
+						<Input
+							id="email"
+							placeholder="m@example.com"
+							type="email"
+							required
+							{...form.register('email')}
+						/>
+						<div className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer bg-transparent hover:bg-transparent">
+							{form.formState.errors.email ?
+								<CircleAlert
+									className="text-red-500/80"
+									size={16}
+								/>
+							:	''}
+						</div>
+					</div>
+					<FormMessage error={form.formState.errors.email?.message} />
 				</div>
 				<div className="grid gap-3">
 					<div className="flex items-center justify-between">
@@ -95,16 +112,19 @@ export function SignInForm({
 							{...form.register('password')}
 						/>
 						<Button
-							className="absolute top-1/2 right-0.5 -translate-y-1/2 cursor-pointer bg-transparent p-0 hover:bg-transparent"
+							className="absolute top-1/2 right-3 h-auto w-auto -translate-y-1/2 cursor-pointer bg-transparent !p-0 hover:bg-transparent"
 							type="button"
 							onClick={() => setPasswordVisible(!passwordVisible)}
 						>
 							{passwordVisible ?
 								<EyeOff className="transition-all duration-200 group-hover:opacity-100 dark:invert dark:group-hover:invert" />
+							: form.formState.errors.password ?
+								<CircleAlert className="text-red-500/80" />
 							:	<Eye className="transition-all duration-200 group-hover:opacity-100 dark:invert dark:group-hover:invert" />
 							}
 						</Button>
 					</div>
+					<FormMessage error={form.formState.errors.password?.message} />
 				</div>
 
 				<Button

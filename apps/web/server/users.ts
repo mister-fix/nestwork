@@ -13,6 +13,7 @@ export const signUpUser = async (
 				name,
 				email,
 				password,
+				callbackURL: '/dashboard',
 			},
 		});
 

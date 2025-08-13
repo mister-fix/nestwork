@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { LogoImage } from '@/components/logo-image';
+import { ThemeToggler } from '@/components/theme-toggler';
 
 import icon from '@repo/assets/branding/icon-light.svg';
 import logoDark from '@repo/assets/branding/nestwork-light.svg';
@@ -16,7 +17,7 @@ export default function Page({ children }: Props) {
 	return (
 		<div className="grid min-h-svh lg:grid-cols-2">
 			<div className="flex flex-col gap-4 p-4 sm:p-6 md:p-10">
-				<div className="flex justify-center gap-2 md:justify-start">
+				<div className="flex items-center justify-center gap-2 md:justify-start">
 					<Link href="/">
 						<LogoImage
 							alt="Nestwork logo"
@@ -24,6 +25,10 @@ export default function Page({ children }: Props) {
 							srcLight={logoLight}
 						/>
 					</Link>
+
+					<div className="ml-auto">
+						<ThemeToggler />
+					</div>
 				</div>
 				<div className="flex flex-1 items-center justify-center">
 					<div className="w-full max-w-xs">{children}</div>
