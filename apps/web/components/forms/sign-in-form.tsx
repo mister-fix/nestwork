@@ -54,8 +54,9 @@ export function SignInForm({
 					toast.success(message);
 					router.push('/dashboard');
 				}
-
-				toast.error(message);
+				else {
+					toast.error(message);
+				}
 			});
 		}
 		catch (error) {

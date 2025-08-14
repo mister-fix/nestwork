@@ -16,6 +16,7 @@ export function SignOutButton() {
 
 	return (
 		<Button
+			type="button"
 			size="sm"
 			onClick={handleLogout}
 		>

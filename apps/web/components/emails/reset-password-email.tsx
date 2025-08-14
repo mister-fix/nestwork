@@ -48,7 +48,7 @@ export function ResetPasswordEmail(props: EmailProps) {
 								className="block rounded-md bg-[#0e0c7c] px-6 py-3 text-center text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0e0c7c]/80"
 								href={passwordResetUrl}
 							>
-								Get started
+								Click here to reset password
 							</Button>
 
 							<Text>

@@ -54,3 +54,4 @@ export const session = pgTable('sessions', {
 });
 
 export const authSchema = { user, account, verification, session };
+export type User = typeof user.$inferSelect;
