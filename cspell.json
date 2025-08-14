@@ -54,8 +54,7 @@
 		"npm",
 		"fonts",
 		"node",
-		"project-dependencies",
-		"project-terms"
+		"lorem-ipsum"
 	],
 	"dictionaryDefinitions": [],
 	"files": ["**/*.{txt,md,json,js,cjs,mjs,ts,jsx,tsx,yml,yaml,toml}"],
@@ -80,7 +79,10 @@
 		"coderabbit",
 		"coderabbitai",
 		"neondatabase",
-		"spacker"
+		"spacker",
+		"cmdk",
+		"nums",
+		"Ivpu"
 	],
 	"patterns": [
 		{
@@ -93,6 +95,7 @@
 	"import": [
 		"@cspell/dict-git/cspell-ext.json",
 		"@cspell/dict-filetypes/cspell-ext.json",
-		"@cspell/dict-typescript/cspell-ext.json"
+		"@cspell/dict-typescript/cspell-ext.json",
+		"@cspell/dict-lorem-ipsum/cspell-ext.json"
 	]
 }
